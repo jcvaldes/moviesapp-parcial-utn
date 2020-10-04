@@ -1,0 +1,79 @@
+<link
+  href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+  rel="stylesheet"
+  id="bootstrap-css"
+/>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container register">
+  <div class="row">
+    <div class="col-md-3 register-left">
+      <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+      <h3>Cine</h3>
+    </div>
+    <div class="col-md-9 register-right">
+      <div class="tab-content" id="myTabContent">
+        <div
+          class="tab-pane fade show active"
+          id="home"
+          role="tabpanel"
+          aria-labelledby="home-tab"
+        >
+          <h3 class="register-heading">Nuevo Cine</h3>
+          <form novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="row register-form">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Nombre</label>
+                  <input
+                    formControlName="nombre"
+                    type="text"
+                    class="form-control"
+                    placeholder="Nombre *"
+                    value=""
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Foto</label>
+                  <input
+                    formControlName="foto"
+                    type="text"
+                    class="form-control"
+                    placeholder="Link Foto *"
+                    value=""
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Pais Origen</label>
+                  <input
+                    formControlName="paisOrigen"
+                    type="text"
+                    class="form-control"
+                    placeholder="País *"
+                    value=""
+                    required
+                  />
+                </div>
+                <div class="form-row">
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    [disabled]="form.invalid"
+                  >
+                    Guardar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-cine-listado [cine]="cine"></app-cine-listado>

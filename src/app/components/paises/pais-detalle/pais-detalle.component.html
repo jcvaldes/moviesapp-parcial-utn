@@ -1,0 +1,20 @@
+<img [src]="pais.flag" width="300" alt="" />
+<form>
+  <div class="row mt-3">
+    <div class="col-12">
+      <div class="form-group">
+        <label>Nombre</label>
+        <span class="form-control">{{ pais.name }}</span>
+      </div>
+      <div class="form-group">
+        <label>Capital</label>
+        <span class="form-control">{{ pais.capital }}</span>
+      </div>
+      <div class="form-group">
+        <label>Subregion</label>
+        <span class="form-control">{{ pais.subregion }}</span>
+      </div>
+      <button class="btn btn-danger btn-lg mr-3" (click)="onDeactivate(pais)">Desactivar</button>
+    </div>
+  </div>
+</form>

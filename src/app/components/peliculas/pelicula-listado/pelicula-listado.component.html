@@ -1,0 +1,16 @@
+<div class="container paisTable">
+  <div class="row">
+    <div class="col-12">
+      <app-pelicula-tabla #paisTabla [peliculas]="peliculas" (peliculaSelected)="onSelected($event)"></app-pelicula-tabla>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3">
+      <app-pelicula-detalle class="ml-2" *ngIf="pelicula" [pelicula]="pelicula" (peliculaDeleted)="onDeleted($event)"></app-pelicula-detalle>
+    </div>
+    <div class="col-9">
+      <app-actor-listado [pelicula]="pelicula" *ngIf="pelicula"></app-actor-listado>
+    </div>
+  </div>
+
+</div>

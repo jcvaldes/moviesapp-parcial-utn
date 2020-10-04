@@ -1,0 +1,22 @@
+<img [src]="pelicula.fotoPelicula" alt="foto pelicula" />
+<form>
+
+      <div class="form-group">
+        <label>Nombre</label>
+        <span class="form-control">{{ pelicula.nombre }}</span>
+      </div>
+      <div class="form-group">
+        <label>Cantidad Público</label>
+        <span class="form-control">{{ pelicula.cantidadPublico }}</span>
+      </div>
+      <div class="form-group">
+        <label>Tipo</label>
+        <span class="form-control">{{ pelicula.tipo }}</span>
+      </div>
+      <div class="form-group">
+        <label>Fecha Estreno</label>
+        <span class="form-control">{{ pelicula.fechaEstreno }}</span>
+      </div>
+      <button class="btn btn-danger btn-lg mr-3" (click)="onDelete(pelicula)">Eliminar</button>
+
+</form>

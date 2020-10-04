@@ -1,0 +1,21 @@
+<input type="text" [(ngModel)]="searchTerm" class="search" placeholder="Buscar País..">
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Subregion</th>
+      <th scope="col">Capital</th>
+      <th scope="col">Bandera</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pais of paises | filter:searchTerm:'name'" (click)="onSelect(pais)">
+      <td scope="row">{{ pais.name }}</td>
+      <td scope="row">{{ pais.subregion }}</td>
+      <td scope="row">{{ pais.capital }}</td>
+      <td scope="row">
+          <img [src]="pais.flag" width="70" alt="">
+      </td>
+    </tr>
+  </tbody>
+</table>

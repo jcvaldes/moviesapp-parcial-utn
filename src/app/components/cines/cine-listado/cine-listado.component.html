@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <app-cine-tabla
+        #cineTabla
+        (cineSelected)="onSelected($event)"
+      ></app-cine-tabla>
+      <app-pelicula-listado
+        *ngIf="peliculas"
+        [peliculas]="peliculas"
+      ></app-pelicula-listado>
+    </div>
+  </div>
+</div>

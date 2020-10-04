@@ -1,0 +1,32 @@
+<button class="btn btn-primary btn-lg mb-4" routerLink="/peliculas/alta" role="button">Nueva Pelicula</button>
+<input type="text" [(ngModel)]="searchTerm" class="search" placeholder="Buscar Peliculas..">
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Fecha Estreno</th>
+      <th scope="col">Cantidad Público</th>
+      <th scope="col">Foto Película</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pelicula of peliculas | filter: searchTerm:'nombre'">
+      <th scope="row">{{ pelicula.id }}</th>
+      <td scope="row">{{ pelicula.nombre }}</td>
+      <td scope="row">{{ pelicula.tipo }}</td>
+      <td scope="row">{{ pelicula.fechaEstreno | date:'dd/MM/yyyy' }}</td>
+      <td scope="row">{{ pelicula.cantidadPublico }}</td>
+      <td scope="row">
+        <img width="50" [src]="pelicula.fotoPelicula" alt=""></td>
+      <td scope="row">
+        <div class="btn-group dropup floating-action-button">
+          <button type="button" class="btn btn-info btn-sm btn-raised" (click)="onSelect(pelicula)">Detalle</button>
+        </div>
+      </td>
+    </tr>
+
+  </tbody>
+</table>

@@ -1,0 +1,29 @@
+<img [src]="actor.foto" alt="foto actor" />
+<form>
+  <div class="row mt-3">
+    <div class="col-12">
+
+      <div class="form-group">
+        <label>Nombre</label>
+        <span class="form-control">{{ actor.nombre }}</span>
+      </div>
+      <div class="form-group">
+        <label>Apellido</label>
+        <span class="form-control">{{ actor.apellido }}</span>
+      </div>
+      <div class="form-group">
+        <label>Sexo</label>
+        <span class="form-control">{{ actor.sexo }}</span>
+      </div>
+      <div class="form-group">
+        <label>Fecha Nac</label>
+        <span class="form-control">{{ actor.fechaNacimiento }}</span>
+      </div>
+      <div class="form-group">
+        <label>Pais Origen</label>
+        <span class="form-control">{{ actor.paisOrigen }}</span>
+      </div>
+      <button class="btn btn-danger btn-lg mr-3" (click)="onDelete(actor)">Eliminar</button>
+    </div>
+  </div>
+</form>

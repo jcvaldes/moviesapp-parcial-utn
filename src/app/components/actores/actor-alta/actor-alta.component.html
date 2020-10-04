@@ -1,0 +1,92 @@
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Nuevo Actor</h5>
+      <form novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Nombre</label>
+              <input
+                formControlName="nombre"
+                type="text"
+                class="form-control"
+                placeholder="Nombre *"
+                value=""
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label>Apellido</label>
+              <input
+                formControlName="apellido"
+                type="text"
+                class="form-control"
+                placeholder="Apellido *"
+                value=""
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label>Sexo</label>
+              <select formControlName="sexo" class="form-control" required>
+                <!-- <option value="-1" class="hidden"  selected disabled>Selecciona</option> -->
+                <option value="F">Femenino</option>
+                <option value="M">Masculino</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Fecha Nacimiento</label>
+              <input
+                formControlName="fechaNacimiento"
+                type="date"
+                name="bday"
+                max="2030-12-31"
+                min="1910-01-01"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <label>Foto</label>
+              <input
+                formControlName="foto"
+                type="text"
+                class="form-control"
+                placeholder="Foto *"
+                value=""
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label>Pais Origen</label>
+
+              <input
+                formControlName="paisOrigen"
+                type="text"
+                class="form-control"
+                placeholder="Selecciona un pais de la lista"
+                disabled
+              />
+            </div>
+            <button
+              type="submit"
+              class="btn btn-primary"
+              [disabled]="form.invalid"
+            >
+              Guardar
+            </button>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-12">
+            <app-pais-listado
+              (paisSelected)="onSelected($event)"
+            ></app-pais-listado>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

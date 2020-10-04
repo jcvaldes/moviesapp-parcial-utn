@@ -1,0 +1,26 @@
+<input type="text" [(ngModel)]="searchTerm" class="search" placeholder="Buscar Cines..">
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Foto</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Pais Origen</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cine of cines | filter: searchTerm:'nombre,paisOrigen'">
+      <th scope="row">{{ cine.id }}</th>
+      <td scope="row">
+        <img width="150" [src]="cine.foto" alt="foto cine">
+      </td>
+      <td scope="row">{{ cine.nombre }}</td>
+      <td scope="row">{{ cine.paisOrigen }}</td>
+      <td>
+        <button type="button" (click)="onSelect(cine)" class="btn btn-primary btn-sm mr-1">Detalle</button>
+        <button type="button" (click)="onDelete(cine)" class="btn btn-danger btn-sm">Desactivar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
