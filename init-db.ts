@@ -1,5 +1,5 @@
 import * as firebase from 'firebase';
-import { ACTORS, MOVIES } from './db-data';
+import { ACTORS, MOVIES, CINES } from './db-data';
 import { environment } from './src/environments/environment';
 const config = environment.firebase;
 
@@ -25,10 +25,19 @@ async function main() {
 }
 
 async function uploadData() {
+  await uploadCines();
   await uploadActors();
   await uploadMovies();
 }
 
+
+async function uploadCines() {
+  const cines = await db.collection('cines');
+  for (let cine of Object.values(CINES)) {
+    const cineRef = await cines.add(cine);
+    console.log(`Uploading cine ${cine['nombre']}`);
+  }
+}
 
 async function uploadActors() {
   const actors = await db.collection('actors');

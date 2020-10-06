@@ -2,7 +2,7 @@
 <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">#</th>
+      <!-- <th scope="col">#</th> -->
       <th scope="col">Foto</th>
       <th scope="col">Nombre</th>
       <th scope="col">Pais Origen</th>
@@ -11,7 +11,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let cine of cines | filter: searchTerm:'nombre,paisOrigen'">
-      <th scope="row">{{ cine.id }}</th>
+      <!-- <th scope="row">{{ cine.id }}</th> -->
       <td scope="row">
         <img width="150" [src]="cine.foto" alt="foto cine">
       </td>
