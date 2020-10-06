@@ -19,18 +19,15 @@ export class PeliculaService {
           return convertSnaps<Pelicula>(snaps);
         }), first()); // o take(1)
   }
-  // Partial permite que no todas las propiedades sean obligatorias de pasar
-  saveMovie(movieId: string, changes: Partial<Pelicula>): Observable<any> {
+  saveMovie(movie: Pelicula): Observable<any> {
     // si el documento existe usamos update si no existe usamos set
     // from: transforma la promesa en un observable
-    return from(this.db.doc(`movies/${movieId}`).update(changes));
+    return from(this.db.collection('movies').add(movie));
   }
 
   deleteMovie(movieId: string): Observable<any> {
     return from(this.db.doc(`movies/${movieId}`).delete());
   }
-
-
 }
 
 

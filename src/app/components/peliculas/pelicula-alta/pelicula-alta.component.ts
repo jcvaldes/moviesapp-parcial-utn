@@ -26,7 +26,10 @@ export class PeliculaAltaComponent implements OnInit {
       fotoPelicula: new FormControl(null, Validators.required),
     });
     this.route.queryParams.subscribe(data  => {
-      this.cine = this._cineService.getCine(+data.cineId);
+      this._cineService.getCine(data.cineId).subscribe(cine => {
+        debugger
+        this.cine = cine[0];
+      });
       this.cine.peliculas = [];
     });
   }
@@ -34,10 +37,11 @@ export class PeliculaAltaComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit() {
+    debugger
     if ( this.cine ) {
-      this._cineService.updateCine(this.form.value);
+      this._cineService.updateCine(this.cine.id, this.form.value);
     } else {
-      this._peliculaService.saveMovie(null, this.form.value);
+      this._peliculaService.saveMovie(this.form.value);
     }
     this.form.reset();
     Swal.fire('Atención', 'La película ha sido guardada', 'success');

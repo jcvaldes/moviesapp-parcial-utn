@@ -1,6 +1,6 @@
 export class Actor {
     constructor (
-        public id: number,
+        public id: string,
         public nombre: string,
         public apellido: string,
         public sexo: string,

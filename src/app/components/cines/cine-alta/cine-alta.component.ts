@@ -15,7 +15,7 @@ export class CineAltaComponent implements OnInit {
   form: FormGroup;
   constructor(
     private router: Router,
-    public _cineService: CineService) {
+    public cineService: CineService) {
     this.form = new FormGroup({
       nombre: new FormControl(null, Validators.required),
       foto: new FormControl(null, Validators.required),
@@ -27,7 +27,7 @@ export class CineAltaComponent implements OnInit {
   }
   onSubmit() {
     this.cine = this.createCine();
-    this._cineService.altaCine(this.cine);
+    this.cineService.saveCine(this.cine);
     this.form.reset();
     Swal.fire({
       title: 'Atención',
@@ -45,11 +45,9 @@ export class CineAltaComponent implements OnInit {
   }
   createCine() {
     const cine: Cine = {
-      id: 0,
       nombre: this.form.value.nombre,
       paisOrigen: this.form.value.paisOrigen,
-      foto: this.form.value.foto,
-      peliculas: []
+      foto: this.form.value.foto
     };
     return cine;
   }

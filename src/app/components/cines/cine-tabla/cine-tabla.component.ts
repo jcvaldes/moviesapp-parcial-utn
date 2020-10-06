@@ -13,16 +13,20 @@ export class CineTablaComponent implements OnInit {
   @Output() cineSelected: EventEmitter<Cine> = new EventEmitter<Cine>();
   @Input() cines: Cine[] = [];
   constructor(
-    public _cineService: CineService
-  ) {}
+    public cineService: CineService
+  ) { }
   ngOnInit() {
-    this.cines = this._cineService.getCines();
+    this.cineService
+      .loadAllCines()
+      .subscribe(cines => {
+        this.cines = cines;
+      });
   }
   onSelect(cine) {
     this.cineSelected.emit(cine);
   }
   onDelete(cine) {
-    this._cineService.deleteCine(cine);
+    this.cineService.deleteCine(cine);
     Swal.fire('Atención', 'El cine ha sido desactivado', 'success');
     this.ngOnInit();
   }

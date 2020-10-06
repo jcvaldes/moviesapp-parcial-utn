@@ -9,7 +9,7 @@ export enum validTypes {
 }
 export class Pelicula {
     constructor (
-        public id: number,
+        public id: string,
         public nombre: string,
         public tipo: validTypes,
         public fechaEstreno: Date,
