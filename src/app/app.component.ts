@@ -20,9 +20,9 @@ export class AppComponent {
     this.initDb();
   }
   private initDb() {
-    this.retrivePeliculas();
-    this.retriveActores();
-    this.retriveCines();
+    // this.retrivePeliculas();
+    // this.retriveActores();
+    // this.retriveCines();
   }
 
   private retrivePeliculas() {

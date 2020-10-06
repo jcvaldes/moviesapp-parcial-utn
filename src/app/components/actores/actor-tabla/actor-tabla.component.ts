@@ -12,8 +12,9 @@ export class ActorTablaComponent implements OnInit {
   searchTerm: string;
   @Output() actorSelected: EventEmitter<Actor> = new EventEmitter<Actor>();
   @Input() actores: Actor[] = [];
-  constructor(public _actorService: ActorService) {
-    this.actores = JSON.parse(localStorage.getItem('actores')) || [];
+  constructor(public actorService: ActorService) {
+    this.actorService.loadAllActors().subscribe(actors => this.actores = actors);
+    // this.actores = JSON.parse(localStorage.getItem('actores')) || [];
   }
   onSelect(actor) {
     this.actorSelected.emit(actor);

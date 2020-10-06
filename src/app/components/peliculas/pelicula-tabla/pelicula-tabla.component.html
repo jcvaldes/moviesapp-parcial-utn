@@ -3,7 +3,7 @@
 <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">#</th>
+      <!-- <th scope="col">#</th> -->
       <th scope="col">Nombre</th>
       <th scope="col">Tipo</th>
       <th scope="col">Fecha Estreno</th>
@@ -14,7 +14,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let pelicula of peliculas | filter: searchTerm:'nombre'">
-      <th scope="row">{{ pelicula.id }}</th>
+      <!-- <th scope="row">{{ pelicula.id }}</th> -->
       <td scope="row">{{ pelicula.nombre }}</td>
       <td scope="row">{{ pelicula.tipo }}</td>
       <td scope="row">{{ pelicula.fechaEstreno | date:'dd/MM/yyyy' }}</td>
