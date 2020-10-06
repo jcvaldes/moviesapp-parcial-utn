@@ -47,7 +47,8 @@ export class CineAltaComponent implements OnInit {
     const cine: Cine = {
       nombre: this.form.value.nombre,
       paisOrigen: this.form.value.paisOrigen,
-      foto: this.form.value.foto
+      foto: this.form.value.foto,
+      peliculas: []
     };
     return cine;
   }
