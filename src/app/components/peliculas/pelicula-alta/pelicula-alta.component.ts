@@ -47,6 +47,7 @@ export class PeliculaAltaComponent implements OnInit {
       this.peliculaService.saveMovie(movie);
     }
     this.form.reset();
+    this.actorTabla.actores.forEach(i=> i.selected = false);
     Swal.fire('Atención', 'La película ha sido guardada', 'success');
   }
 }
