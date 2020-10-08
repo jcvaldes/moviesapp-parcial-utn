@@ -3,6 +3,7 @@ import { Pelicula } from '../pelicula.model';
 import { PeliculaService } from '../pelicula.service';
 import { PeliculaTablaComponent } from '../pelicula-tabla/pelicula-tabla.component';
 import { Actor } from '../../actores/actor.model';
+import { ActorService } from '../../actores/actor.service';
 
 @Component({
   selector: 'app-pelicula-listado',
@@ -14,10 +15,14 @@ export class PeliculaListadoComponent {
   @Input() peliculas: Pelicula[];
   actores: Actor[];
   @ViewChild(PeliculaTablaComponent, { static: true }) peliculaTabla: PeliculaTablaComponent;
-  constructor() { }
+  constructor(private actorService: ActorService) { }
   onSelected(pelicula: Pelicula) {
-    this.pelicula = pelicula;
-    this.actores = pelicula.actores;
+    //
+    // this.actores = pelicula.actores;
+    this.actorService.loadActors(pelicula.actores).subscribe(actors => {
+      debugger
+      this.pelicula = {...pelicula, actores: actors};
+    });
   }
   onDeleted(pelicula: Pelicula) {
     this.peliculas = this.peliculaTabla.peliculas.filter(i => {

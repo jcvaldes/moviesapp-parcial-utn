@@ -18,6 +18,7 @@ export class PeliculaDetalleComponent {
     public _peliculaService: PeliculaService) {}
 
   onDelete(pelicula) {
+    debugger
     this._peliculaService.deleteMovie(pelicula.id);
     this.peliculaDeleted.emit(pelicula);
     this.onClose();

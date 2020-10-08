@@ -26,6 +26,7 @@ export class PeliculaService {
   }
 
   deleteMovie(movieId: string): Observable<any> {
+    debugger
     return from(this.db.doc(`movies/${movieId}`).delete());
   }
 }
