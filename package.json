@@ -9,7 +9,7 @@
     "init-db": "ts-node -P ./init-db.tsconfig.json ./init-db.ts",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "heroku-postinstall": "ng build --output-path angularapp --aot --prod"
+    "postinstall": "ng build --output-path angularapp --aot --prod"
   },
   "private": true,
   "engines": {
