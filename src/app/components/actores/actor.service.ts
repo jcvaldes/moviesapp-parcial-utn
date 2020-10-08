@@ -32,7 +32,6 @@ export class ActorService {
         .snapshotChanges()
         .pipe(
           map(snaps => {
-            debugger
             return convertSnaps<Actor>(snaps);
             // return snaps.map(snap => {
             //   return <Course>{

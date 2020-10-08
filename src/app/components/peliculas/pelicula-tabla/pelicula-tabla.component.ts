@@ -17,6 +17,7 @@ export class PeliculaTablaComponent implements OnInit {
     this.peliculaSelected.emit(pelicula);
   }
   ngOnInit(): void {
+    debugger
     if (!this.peliculas) {
       this.peliculaService.loadAllMovies().subscribe(peliculas => this.peliculas = peliculas);
       // this.peliculas = JSON.parse(localStorage.getItem('peliculas')) || [];

@@ -15,11 +15,12 @@ export class PeliculaDetalleComponent {
   @Output() back: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(
-    public _peliculaService: PeliculaService) {}
+    public peliculaService: PeliculaService) {}
 
   onDelete(pelicula) {
-    debugger
-    this._peliculaService.deleteMovie(pelicula.id);
+    this.peliculaService.deleteMovie(pelicula.id).subscribe(() => {
+      Swal.fire('Atención', 'Pelicula Eliminada', 'success');
+    });
     this.peliculaDeleted.emit(pelicula);
     this.onClose();
   }
