@@ -18,9 +18,15 @@ export class ActorDetalleComponent {
     public _actorService: ActorService) {}
 
   onDelete(actor) {
-    this._actorService.deleteActor(actor);
+    this._actorService.deleteActor(actor).subscribe(data => {
+      Swal.fire('Atención', 'Actir Eliminado', 'success');
+    });
     this.actorDeleted.emit(actor);
     this.onClose();
+  }
+  onUpdate(actor) {
+    this._actorService.deleteActor(actor);
+
   }
   onClose() {
     this.actor = null;

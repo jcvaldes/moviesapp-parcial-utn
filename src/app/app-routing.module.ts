@@ -15,13 +15,6 @@ const routes: Routes = [
   { path: 'bienvenido', component: BienvenidaComponent },
   { path: 'busqueda', component: BusquedaComponent },
   {
-    path: 'cines',
-    children: [
-      { path: 'alta', component: CineAltaComponent },
-      { path: 'listado', component: CineListadoComponent },
-    ]
-  },
-  {
     path: 'peliculas',
     children: [
       { path: 'alta', component: PeliculaAltaComponent },

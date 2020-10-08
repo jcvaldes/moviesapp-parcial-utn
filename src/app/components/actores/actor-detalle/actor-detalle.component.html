@@ -2,7 +2,6 @@
 <form>
   <div class="row mt-3">
     <div class="col-12">
-
       <div class="form-group">
         <label>Nombre</label>
         <span class="form-control">{{ actor.nombre }}</span>
@@ -24,6 +23,7 @@
         <span class="form-control">{{ actor.paisOrigen }}</span>
       </div>
       <button class="btn btn-danger btn-lg mr-3" (click)="onDelete(actor)">Eliminar</button>
+      <button class="btn btn-danger btn-lg mr-3" (click)="onUpdate(actor)">Actualizar</button>
     </div>
   </div>
 </form>

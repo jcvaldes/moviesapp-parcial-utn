@@ -70,7 +70,7 @@ import { environment } from '../environments/environment.prod';
     ReactiveFormsModule,
     AngularFireAuthModule,
     // capacidad de trabajar offline con firebase
-    AngularFirestoreModule.enablePersistence(),
+    AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [AngularFirestore],
