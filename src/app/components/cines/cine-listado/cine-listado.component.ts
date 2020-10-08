@@ -22,6 +22,7 @@ export class CineListadoComponent implements OnInit, OnChanges {
   constructor(public _cineService: CineService) { }
   onSelected(cine: Cine) {
     this.cine = cine;
+    debugger
     this.peliculas = cine.peliculas;
   }
   onDeleted(cine: Cine) {

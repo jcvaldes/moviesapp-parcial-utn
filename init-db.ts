@@ -10,7 +10,7 @@ console.log('\n\n\n\nMake sure that this is your own database, so that you have 
 
 const app = firebase.initializeApp(config);
 const db = firebase.firestore();
-
+let actorsIds = [];
 main().then(r => console.log('Done.'));
 
 async function main() {
@@ -42,7 +42,8 @@ async function uploadCines() {
 async function uploadActors() {
   const actors = await db.collection('actors');
   for (let actor of Object.values(ACTORS)) {
-    const userRef = await actors.add(actor);
+    const actorRef = await actors.add(actor);
+    actorsIds.push(actorRef.id);
     console.log(`Uploading user ${actor['nombre']}`);
   }
 }
@@ -50,7 +51,8 @@ async function uploadActors() {
 async function uploadMovies() {
   const movies = await db.collection('movies');
   for (let movie of Object.values(MOVIES)) {
-    const userRef = await movies.add(movie);
+    movie['actores'] = [actorsIds[0], actorsIds[1]];
+    const movieRef = await movies.add(movie);
     console.log(`Uploading user ${movie['nombre']}`);
   }
 }

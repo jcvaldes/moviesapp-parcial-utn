@@ -7,14 +7,13 @@ export enum validTypes {
     AMOR,
     OTROS
 }
-export class Pelicula {
-    constructor (
-        public id: string,
-        public nombre: string,
-        public tipo: validTypes,
-        public fechaEstreno: Date,
-        public cantidadPublico: number,
-        public fotoPelicula: string,
-        public actores?: Actor[]
-    ){}
+export interface Pelicula {
+  id: string;
+  nombre: string;
+  tipo: validTypes;
+  fechaEstreno: Date;
+  cantidadPublico: number;
+  fotoPelicula: string;
+  actores: Actor[];
+
 }

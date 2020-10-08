@@ -4,6 +4,7 @@
   <thead class="thead-dark">
     <tr>
       <!-- <th scope="col">#</th> -->
+      <th>Sel</th>
       <th scope="col">Nombre</th>
       <th scope="col">Apellido</th>
       <th scope="col">Sexo</th>
@@ -13,7 +14,12 @@
   </thead>
   <tbody>
     <tr *ngFor="let actor of actores | filter: searchTerm:'nombre'" (click)="onSelect(actor)">
-      <!-- <th scope="row">{{ actor.id }}</th> -->
+      <td scope="row">
+         <div class="checkbox">
+            <label><input type="checkbox" [checked]="actor.selected" (change)="actor.selected = !actor.selected"></label>
+          </div>
+        </td>
+
       <td scope="row">{{ actor.nombre }}</td>
       <td scope="row">{{ actor.apellido }}</td>
       <td scope="row">{{ actor.sexo }}</td>
