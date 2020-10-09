@@ -1,29 +1,33 @@
-<img [src]="actor.foto" alt="foto actor" />
-<form>
+<form [formGroup]="form">
+  <img [src]="actor.foto" alt="foto actor" />
   <div class="row mt-3">
     <div class="col-12">
+      <input type="hidden" formControlName="id"/>
       <div class="form-group">
         <label>Nombre</label>
-        <span class="form-control">{{ actor.nombre }}</span>
+        <input class="form-control" formControlName="nombre" />
       </div>
       <div class="form-group">
         <label>Apellido</label>
-        <span class="form-control">{{ actor.apellido }}</span>
+        <input class="form-control" formControlName="apellido" />
       </div>
       <div class="form-group">
         <label>Sexo</label>
-        <span class="form-control">{{ actor.sexo }}</span>
+        <input class="form-control" formControlName="sexo"/>
       </div>
       <div class="form-group">
         <label>Fecha Nac</label>
-        <span class="form-control">{{ actor.fechaNacimiento }}</span>
+        <input class="form-control" formControlName="fechaNacimiento"/>
       </div>
       <div class="form-group">
         <label>Pais Origen</label>
-        <span class="form-control">{{ actor.paisOrigen }}</span>
+        <input class="form-control" formControlName="paisOrigen"/>
       </div>
-      <button class="btn btn-danger btn-lg mr-3" (click)="onDelete(actor)">Eliminar</button>
-      <button class="btn btn-danger btn-lg mr-3" (click)="onUpdate(actor)">Actualizar</button>
+      <button class="btn btn-danger btn-lg mr-3" (click)="onDelete()">Eliminar</button>
+      <button *ngIf="!isEdit" class="btn btn-primary btn-lg mr-3" (click)="onUpdate(actor)">Modificar</button>
+
+      <button *ngIf="isEdit" class="btn btn-primary btn-lg mr-3" (click)="onUpdate(actor)">Actualizar</button>
+
     </div>
   </div>
 </form>

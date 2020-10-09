@@ -29,6 +29,7 @@
     "express": "4.17.1",
     "firebase": "^7.22.0",
     "lodash": "4.17.20",
+    "ngx-pagination": "^5.0.0",
     "rxjs": "6.5.5",
     "sweetalert2": "10.3.5",
     "tslib": "^2.0.0",

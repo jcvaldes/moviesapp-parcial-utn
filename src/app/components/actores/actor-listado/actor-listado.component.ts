@@ -25,6 +25,11 @@ export class ActorListadoComponent implements OnInit, OnChanges {
     });
     this.actor = null;
   }
+  onUpdated() {
+    debugger
+    this.actorTabla.actores = [];
+    this.actorTabla.ngOnInit();
+  }
   ngOnInit(): void {
     if (this.actores && this.actores.length === 0) {
       this.actores = this.actorTabla.actores;

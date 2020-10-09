@@ -5,6 +5,6 @@
       </app-actor-tabla>
     </div>
     <div class="col-4">
-      <app-actor-detalle *ngIf="actor" [actor]="actor" (actorDeleted)="onDeleted($event)"></app-actor-detalle>
+      <app-actor-detalle *ngIf="actor" [actor]="actor" (actorDeleted)="onDeleted($event)" (actorUpdated)="actorUpdated()"></app-actor-detalle>
     </div>
 </div>

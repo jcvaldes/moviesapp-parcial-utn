@@ -37,6 +37,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import { environment } from '../environments/environment.prod';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { environment } from '../environments/environment.prod';
     FormsModule,
     ReactiveFormsModule,
     AngularFireAuthModule,
+    NgxPaginationModule,
     // capacidad de trabajar offline con firebase
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase),
