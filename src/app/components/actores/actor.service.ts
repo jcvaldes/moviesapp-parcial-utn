@@ -43,11 +43,12 @@ export class ActorService {
   }
 
   // Partial permite que no todas las propiedades sean obligatorias de pasar
-  saveActor(actorId: string, changes: Partial<Actor>): Observable<any> {
+  saveActor(changes: Partial<Actor>): Observable<any> {
     // si el documento existe usamos update si no existe usamos set
     // from: transforma la promesa en un observable
-    if (actorId) {
-      return from(this.db.doc(`actors/${actorId}`).update(changes));
+    debugger
+    if (changes.id) {
+      return from(this.db.doc(`actors/${changes.id}`).update(changes));
     } else {
       return from(this.db.collection('actors').add(changes));
     }

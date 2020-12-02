@@ -11,12 +11,12 @@ import { Pelicula } from '../pelicula.model';
 })
 export class PeliculaDetalleComponent {
   @Input() pelicula: Pelicula;
+  @Input() edit = false;
   @Output() peliculaDeleted: EventEmitter<Pelicula> = new EventEmitter<Pelicula>();
   @Output() back: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(
     public peliculaService: PeliculaService) {}
-
   onDelete(pelicula) {
     this.peliculaService.deleteMovie(pelicula.id).subscribe(() => {
       Swal.fire('Atención', 'Pelicula Eliminada', 'success');

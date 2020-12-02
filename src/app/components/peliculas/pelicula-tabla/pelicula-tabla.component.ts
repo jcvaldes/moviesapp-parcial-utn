@@ -9,7 +9,7 @@ import { PeliculaService } from '../pelicula.service';
   styleUrls: ['./pelicula-tabla.component.scss']
 })
 export class PeliculaTablaComponent implements OnInit {
-  searchTerm: string;
+  @Input() searchTerm: string;
   @Output() peliculaSelected: EventEmitter<Pelicula> = new EventEmitter<Pelicula>();
   @Input() peliculas: Pelicula[];
   constructor(public peliculaService: PeliculaService) {}

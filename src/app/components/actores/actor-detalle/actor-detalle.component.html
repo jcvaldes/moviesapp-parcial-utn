@@ -1,32 +1,32 @@
 <form [formGroup]="form">
-  <img [src]="actor.foto" alt="foto actor" />
+  <img id="foto" [src]="actor.foto" alt="foto actor" />
   <div class="row mt-3">
     <div class="col-12">
-      <input type="hidden" formControlName="id"/>
+      <input type="hidden" id="id" formControlName="id"/>
       <div class="form-group">
         <label>Nombre</label>
-        <input class="form-control" formControlName="nombre" />
+        <input id="nombre" class="form-control" formControlName="nombre" />
       </div>
       <div class="form-group">
         <label>Apellido</label>
-        <input class="form-control" formControlName="apellido" />
+        <input id="apellido" class="form-control" formControlName="apellido" />
       </div>
       <div class="form-group">
         <label>Sexo</label>
-        <input class="form-control" formControlName="sexo"/>
+        <input id="sexo" class="form-control" formControlName="sexo"/>
       </div>
       <div class="form-group">
         <label>Fecha Nac</label>
-        <input class="form-control" formControlName="fechaNacimiento"/>
+        <input id="fechaNacimiento" class="form-control" formControlName="fechaNacimiento"/>
       </div>
       <div class="form-group">
         <label>Pais Origen</label>
-        <input class="form-control" formControlName="paisOrigen"/>
+        <input id="paisOrigen" class="form-control" formControlName="paisOrigen"/>
       </div>
-      <button class="btn btn-danger btn-lg mr-3" (click)="onDelete()">Eliminar</button>
+      <!-- <button class="btn btn-danger btn-lg mr-3" (click)="onDelete()">Eliminar</button>
       <button *ngIf="!isEdit" class="btn btn-primary btn-lg mr-3" (click)="onUpdate(actor)">Modificar</button>
 
-      <button *ngIf="isEdit" class="btn btn-primary btn-lg mr-3" (click)="onUpdate(actor)">Actualizar</button>
+      <button *ngIf="isEdit" class="btn btn-primary btn-lg mr-3" (click)="onUpdate(actor)">Actualizar</button> -->
 
     </div>
   </div>

@@ -1,10 +1,19 @@
 <div class="container">
   <div class="row">
-    <div class="col-8">
+    <div class="col-12">
       <app-actor-tabla #actorTabla [actores]="actores" (actorSelected)="onSelected($event)">
       </app-actor-tabla>
     </div>
-    <div class="col-4">
-      <app-actor-detalle *ngIf="actor" [actor]="actor" (actorDeleted)="onDeleted($event)" (actorUpdated)="actorUpdated()"></app-actor-detalle>
+  </div>
+  <div class="row">
+    <div class="col-*">
+      <app-actor-borrar [actorId]="actor.id" *ngIf="actor"></app-actor-borrar>
     </div>
+    <div class="col-4">
+      <app-actor-detalle *ngIf="actor" [actor]="actor" (valueChanges)="valueChanges($event)"></app-actor-detalle>
+    </div>
+    <div class="col-*">
+      <app-actor-modificar [actor]="actor" *ngIf="actor"></app-actor-modificar>
+    </div>
+  </div>
 </div>

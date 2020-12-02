@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="buscador">
+    <form class="form-block">
+      <input
+        class="search mt-3"
+        type="search"
+        placeholder="Buscar Pelicula"
+        aria-label="Search"
+        #buscador
+        (keyup.enter)="searchMovie(buscador.value)"
+      />
+    </form>
+  </div>
+  <app-pelicula-tabla (peliculaSelected)="peliculaSelected($event)"></app-pelicula-tabla>
+
+  <!-- <app-actor-tabla></app-actor-tabla>
+  <app-pais-tabla></app-pais-tabla> -->
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-*">
+      <app-pelicula-detalle class="ml-2" *ngIf="pelicula" edit=true [pelicula]="pelicula" (peliculaDeleted)="onDeleted($event)"></app-pelicula-detalle>
+    </div>
+  </div>
+</div>

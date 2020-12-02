@@ -7,13 +7,13 @@ import { ActorAltaComponent } from './components/actores/actor-alta/actor-alta.c
 import { ActorListadoComponent } from './components/actores/actor-listado/actor-listado.component';
 import { PaisListadoComponent } from './components/paises/pais-listado/pais-listado.component';
 import { PaisDetalleComponent } from './components/paises/pais-detalle/pais-detalle.component';
-import { BusquedaComponent } from './components/busqueda/busqueda.component';
 import { CineListadoComponent } from './components/cines/cine-listado/cine-listado.component';
 import { CineAltaComponent } from './components/cines/cine-alta/cine-alta.component';
+import { BuscadorComponent } from './components/buscador/buscador.component';
 
 const routes: Routes = [
   { path: 'bienvenido', component: BienvenidaComponent },
-  { path: 'busqueda', component: BusquedaComponent },
+  { path: 'busqueda', component: BuscadorComponent },
   {
     path: 'peliculas',
     children: [

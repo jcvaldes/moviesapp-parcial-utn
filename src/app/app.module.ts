@@ -22,7 +22,7 @@ import { PeliculaDetalleComponent } from './components/peliculas/pelicula-detall
 import { PaisTablaComponent } from './components/paises/pais-tabla/pais-tabla.component';
 import { ActorTablaComponent } from './components/actores/actor-tabla/actor-tabla.component';
 import { ActorDetalleComponent } from './components/actores/actor-detalle/actor-detalle.component';
-import { BusquedaComponent } from './components/busqueda/busqueda.component';
+import { BuscadorComponent } from './components/buscador/buscador.component';
 import { CineListadoComponent } from './components/cines/cine-listado/cine-listado.component';
 import { CineTablaComponent } from './components/cines/cine-tabla/cine-tabla.component';
 import { FilterPipe } from './common/pipes/filter';
@@ -38,13 +38,15 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import { environment } from '../environments/environment.prod';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { ActorBorrarComponent } from './components/actores/actor-borrar/actor-borrar.component';
+import { ActorModificarComponent } from './components/actores/actor-modificar/actor-modificar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HeroComponent,
-    BusquedaComponent,
+    BuscadorComponent,
     BienvenidaComponent,
     PeliculaAltaComponent,
     PeliculaTablaComponent,
@@ -60,7 +62,9 @@ import {NgxPaginationModule} from 'ngx-pagination';
     CineAltaComponent,
     CineTablaComponent,
     CineListadoComponent,
-    FilterPipe
+    FilterPipe,
+    ActorBorrarComponent,
+    ActorModificarComponent
   ],
   imports: [
     BrowserModule,

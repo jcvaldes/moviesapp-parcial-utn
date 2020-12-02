@@ -24,7 +24,11 @@ export class PeliculaService {
     // from: transforma la promesa en un observable
     return from(this.db.collection('movies').add(movie));
   }
-
+  updateMovie(movie: Pelicula): Observable<any> {
+    // si el documento existe usamos update si no existe usamos set
+    // from: transforma la promesa en un observable
+    return from(this.db.doc(`movies/${movie.id}`).update(movie));
+  }
   deleteMovie(movieId: string): Observable<any> {
     debugger
     return from(this.db.doc(`movies/${movieId}`).delete());

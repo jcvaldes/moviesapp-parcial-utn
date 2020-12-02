@@ -24,7 +24,7 @@ export class ActorAltaComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit() {
-    this._actorService.saveActor(null, this.form.value).subscribe(data => {
+    this._actorService.saveActor(this.form.value).subscribe(data => {
       this.form.get('paisOrigen').setValue(null);
       this.form.reset();
       Swal.fire('Atención', 'La actor ha sido guardado', 'success');

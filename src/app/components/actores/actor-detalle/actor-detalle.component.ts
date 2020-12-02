@@ -12,14 +12,16 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class ActorDetalleComponent implements OnChanges {
   @Input() actor: Actor;
-  @Output() actorUpdated = new EventEmitter();
+  @Output() valueChanges = new EventEmitter();
 
-  @Output() actorDeleted: EventEmitter<Actor> = new EventEmitter<Actor>();
+  // @Output() actorUpdated = new EventEmitter();
+
+  // @Output() actorDeleted: EventEmitter<Actor> = new EventEmitter<Actor>();
   @Output() back: EventEmitter<any> = new EventEmitter<any>();
   isEdit = false;
   form: FormGroup;
   constructor(
-    public _actorService: ActorService) {
+    public actorService: ActorService) {
       this.crearForm();
     }
 
@@ -44,25 +46,23 @@ export class ActorDetalleComponent implements OnChanges {
     });
 
   }
-  onDelete() {
-    this._actorService.deleteActor(this.form.get('id').value).subscribe(data => {
-      Swal.fire('Atención', 'Actor Eliminado', 'success');
-    });
-    this.actorDeleted.emit(this.form.get('id').value);
-    this.onClose();
-  }
+  // onDelete() {
+  //   this.actorService.deleteActor(this.form.get('id').value).subscribe(data => {
+  //     Swal.fire('Atención', 'Actor Eliminado', 'success');
+  //   });
+  //   this.actorDeleted.emit(this.form.get('id').value);
+  //   this.onClose();
+  // }
   onEdit() {
     this.isEdit = !this.isEdit;
   }
-  onUpdate(actor) {
-    debugger
+  // onUpdate(actor) {
+  //   this.actorService.saveActor(this.form.value).subscribe(data => {
+  //     this.actorUpdated.emit(actor);
+  //     Swal.fire('Atención', 'Actor Actualizado', 'success');
+  //   });
 
-    this._actorService.saveActor(actor.id, this.form.value).subscribe(data => {
-      this.actorUpdated.emit();
-      Swal.fire('Atención', 'Actor Actualizado', 'success');
-    });
-
-  }
+  // }
   onClose() {
     this.actor = null;
     this.back.emit();
